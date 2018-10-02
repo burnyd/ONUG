@@ -115,7 +115,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-
 
 sudo chmod +x /usr/local/bin/docker-compose
 
+echo "Installing docker-netbox"
 git clone -b master https://github.com/ninech/netbox-docker.git
 cd netbox-docker
 sudo docker-compose pull
 sudo docker-compose up -d
+
+echo "Install pynetbox"
+pip install pynetbox
