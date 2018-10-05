@@ -3,6 +3,7 @@ from cvprac.cvp_client import CvpClient
 import salt
 import urllib3
 
+
 urllib3.disable_warnings()
 
 def config():
@@ -21,10 +22,11 @@ def config_dict():
     return cvp_dict
 
 def connect_cvp():
+    urllib3.disable_warnings()
     client = CvpClient()
     client.connect([config_dict()['server']], config_dict()['username'], config_dict()['password'])
+    return client
 
-def load_config(configlet_name, configlet):
-    connect_cvp()
-    client = CvpClient()
-    client.api.add_configlet(configlet_name, configlet)
+def load_config(config_name, configlet):
+    client = connect_cvp()
+    add = client.api.add_configlet(config_name, configlet)
