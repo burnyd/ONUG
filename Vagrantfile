@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
-config.vm.box = "vEOS-lab-4.20.1F"
+config.vm.box = "vEOS-lab-4.20.9M"
 config.ssh.insert_key = false
 #vb.memory = '2048'
 

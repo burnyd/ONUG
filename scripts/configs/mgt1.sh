@@ -123,3 +123,10 @@ sudo docker-compose up -d
 
 echo "Install pynetbox"
 pip install pynetbox
+
+
+echo "Installing OC tools"
+pip install pyangbind
+
+git clone https://github.com/robshakir/pyangbind /tmp/pyangbind/
+git clone https://github.com/openconfig/public/ /tmp/public/

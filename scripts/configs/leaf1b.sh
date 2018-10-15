@@ -65,6 +65,11 @@ port 6030
 no ssl profile
 no shutdown
 !
+ip access-list copp
+   10 permit ip any any
+!
+control-plane
+   ip access-group test in
 exit"
 
 sleep 5
