@@ -130,3 +130,7 @@ pip install pyangbind
 
 git clone https://github.com/robshakir/pyangbind /tmp/pyangbind/
 git clone https://github.com/openconfig/public/ /tmp/public/
+
+echo "Starting salt proxy minions"
+salt-proxy --proxyid leaf[1:4] -d
+salt-proxy --proxyid spine[1:2] -d
