@@ -23,7 +23,7 @@ sudo echo 10.0.0.100 leaf1b  >> /etc/hosts
 sudo echo 10.0.0.101 spine1  >> /etc/hosts
 sudo echo 10.0.0.102 spine2  >> /etc/hosts
 sudo echo 10.0.0.103 leaf2a  >> /etc/hosts
-sudo echo 10.0.0.103 leaf2b  >> /etc/hosts
+sudo echo 10.0.0.104 leaf2b  >> /etc/hosts
 sudo echo 127.0.0.1 salt >> /etc/hosts
 
 echo "updating apt-get"
