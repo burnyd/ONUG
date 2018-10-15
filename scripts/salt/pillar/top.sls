@@ -5,3 +5,5 @@ base:
     - beacon
   'spine*':
     - beacon
+  'leaf1':
+    - leaf1
