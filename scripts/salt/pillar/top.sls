@@ -1,5 +1,5 @@
 base:
-  {% for index in range(1, 2) -%}
+  {% for index in range(1, 3) -%}
   'spine{{ index }}':
     - spine{{ index }}
   {% endfor -%}

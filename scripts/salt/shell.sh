@@ -5,6 +5,7 @@
 #salt '*' saltutil.refresh_pillar
 #salt '*' pillar.items
 #/usr/lib/python2.7/dist-packages/salt/modules#
+#salt 'lab*' slsutil.renderer salt://top.sls 'jinja'
 
 ping -q -c5 google.com > /dev/null
 
