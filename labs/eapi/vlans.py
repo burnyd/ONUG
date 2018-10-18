@@ -1,9 +1,9 @@
 import os
 from jsonrpclib import Server
 
-switchusername = 'arista'
-switchpassword = 'arista'
-switches = ['leaf1','leaf2']
+switchusername = 'vagrant'
+switchpassword = 'vagrant'
+switches = ['leaf1a','leaf1b']
 vlans = ['600','700','800']
 
 def add_vlans():

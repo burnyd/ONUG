@@ -69,7 +69,7 @@ ip access-list copp
    10 permit ip any any
 !
 control-plane
-   ip access-group test in
+   ip access-group copp in
 exit"
 
 sleep 5
