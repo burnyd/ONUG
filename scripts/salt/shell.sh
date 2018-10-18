@@ -71,13 +71,13 @@ ansible-playbook playbook.yaml -i inventory
 sleep 5
 
 echo "Move salt files to their directories"
-cp ../salt/master /etc/salt/master
-cp -R ../salt/pillar/* /srv/salt/pillar/
-cp -R ../salt/reactor/* /srv/salt/reactor
-cp -R ../salt/states/vlans/ /srv/salt/states/vlans/
-cp -R ../salt/states/bgp/ /srv/salt/states/bgp/
-cp -R ../salt/templates/* /srv/salt/templates/
-cp ../salt/_grains/bgp-as.py /srv/salt/_grains/
+cp ../scripts/salt/master /etc/salt/master
+cp -R ../scripts/salt/pillar/* /srv/salt/pillar/
+cp -R ../scripts/salt/reactor/* /srv/salt/reactor
+cp -R ../scripts/salt/states/vlans/ /srv/salt/states/vlans/
+cp -R ../scripts/salt/states/bgp/ /srv/salt/states/bgp/
+cp -R ../scripts/salt/templates/* /srv/salt/templates/
+cp ../scripts/salt/_grains/bgp-as.py /srv/salt/_grains/
 
 echo "installing salt api via apt"
 apt-get update && apt-get install salt-api -y
@@ -106,7 +106,15 @@ chown -R saltdev /etc/salt /var/cache/salt /var/log/salt /var/run/salt
 echo "restarting salt-master and starting api-server"
 service salt-master restart && service salt-api start
 
-cp /home/arista/arista_automation_events/scripts/salt/BGP_NEIGHBOR_STATE_CHANGE.yml /usr/local/lib/python2.7/dist-packages/napalm_logs/config/eos/
+cp /home/arista/ONUG/scripts/salt/BGP_NEIGHBOR_STATE_CHANGE.yml /usr/local/lib/python2.7/dist-packages/napalm_logs/config/eos/
 
 echo "Run napalm logs"
 napalm-logs --publisher zmq --disable-security --port 5514 &
+
+echo "Start salt proxy minions"
+salt-proxy --proxyid=leaf1 -d
+salt-proxy --proxyid=leaf2 -d
+salt-proxy --proxyid=leaf3 -d
+salt-proxy --proxyid=leaf4 -d
+salt-proxy --proxyid=spine1 -d
+salt-proxy --proxyid=spine2 -d

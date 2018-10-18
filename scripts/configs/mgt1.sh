@@ -136,6 +136,5 @@ salt-proxy --proxyid leaf1 -d
 salt-proxy --proxyid leaf2 -d
 salt-proxy --proxyid leaf3 -d
 salt-proxy --proxyid leaf4 -d
-
 salt-proxy --proxyid spine1 -d
 salt-proxy --proxyid spine2 -d
