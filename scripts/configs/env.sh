@@ -16,6 +16,11 @@ echo Adding Openconfig gnmi client..
 go get github.com/aristanetworks/goarista/cmd/gnmi
 
 echo Finished
+
+echo installing pyangbind
+
+pip install pyangbind
+
 echo Adding pyangbind env
 export PYBINDPLUGIN=`/usr/bin/env python -c \
 	'import pyangbind; import os; print "%s/plugin" % os.path.dirname(pyangbind.__file__)'`

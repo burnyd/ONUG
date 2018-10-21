@@ -74,6 +74,8 @@ config.ssh.insert_key = false
     leaf2b.vm.network "private_network",  virtualbox__intnet: 'leaf2b-spine2-', auto_config: false
     leaf2b.vm.network "private_network",  virtualbox__intnet: 'leaf2b-leaf1b-', auto_config: false
     leaf2b.vm.network "private_network",  virtualbox__intnet: 'leaf2b-host2', auto_config: false
+    leaf2b.vm.box = "vEOS-lab-4.20.9M"
+
 
   leaf2b.vm.provider "virtualbox" do |v|
       v.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]

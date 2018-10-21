@@ -66,21 +66,21 @@ no shutdown
 exit"
 
 sleep 5
-echo "Adding DNS"
-echo nameserver 8.8.8.8  >> /etc/resolv.conf
+#echo "Adding DNS"
+#echo nameserver 8.8.8.8  >> /etc/resolv.conf
 
-wget https://salt-eos.netops.life/salt-eos-latest.swix -P /mnt/flash
-wget https://salt-eos.netops.life/startup.sh -P /mnt/flash
+#wget https://salt-eos.netops.life/salt-eos-latest.swix -P /mnt/flash
+#wget https://salt-eos.netops.life/startup.sh -P /mnt/flash
 
-echo "Replacing the salt master IP"
-sed -i '/SALT_MASTER="x.x.x.x"/c\SALT_MASTER="10.0.0.15"' /mnt/flash/startup.sh
+#echo "Replacing the salt master IP"
+#sed -i '/SALT_MASTER="x.x.x.x"/c\SALT_MASTER="10.0.0.15"' /mnt/flash/startup.sh
 
-echo "Installing extension through EOS cli"
-FastCli -p 15 -c "copy flash:salt-eos-latest.swix extension:"
-FastCli -p 15 -c "extension salt-eos-latest.swix force"
+#echo "Installing extension through EOS cli"
+#FastCli -p 15 -c "copy flash:salt-eos-latest.swix extension:"
+#FastCli -p 15 -c "extension salt-eos-latest.swix force"
 
-sleep 10
+#sleep 10
 
-echo "Running the startup script"
-sudo su
-source /mnt/flash/startup.sh
+#echo "Running the startup script"
+#sudo su
+#source /mnt/flash/startup.sh

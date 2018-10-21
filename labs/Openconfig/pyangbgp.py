@@ -16,7 +16,7 @@ ocbgp.bgp.neighbors.neighbor.add("10.0.11.3")
 
 ocbgp.bgp.neighbors.neighbor["10.0.11.3"].config.peer_as = 10
 ocbgp.bgp.neighbors.neighbor["10.0.11.3"].config.description = "Spine 1"
-ocbgp.bgp.neighbors.neighbor["10.0.11.3"].config.send_community = "EXTENDED"
+#ocbgp.bgp.neighbors.neighbor["10.0.11.3"].config.send_community = "EXTENDED"
 
 struct =  json.dumps(ocbgp.get(filter=True), indent=4)
 
