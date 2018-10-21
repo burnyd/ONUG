@@ -70,6 +70,10 @@ ip access-list copp
 !
 control-plane
    ip access-group copp in
+!
+logging host 10.0.0.15 5514
+logging format hostname fqdn
+!
 exit"
 
 sleep 5
