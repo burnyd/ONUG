@@ -13,10 +13,10 @@ pillar_roots:
     - /srv/salt/states
 
 reactor:
-  - salt/minion/leaf4*/start:
+  - salt/minion/leaf2a*/start:
     - salt://reactor/leafvlansztp.sls
 
-  - salt/minion/leaf4*/start:
+  - salt/minion/leaf2a*/start:
     - salt://reactor/slackgenerate.sls
 
   - 'napalm/syslog/eos/BGP-5-ADJCHANGE/*':
@@ -1287,4 +1287,3 @@ engines:
 # use OS defaults, typically 75 seconds on Linux, see
 # /proc/sys/net/ipv4/tcp_keepalive_intvl.
 #tcp_keepalive_intvl: -1
-
